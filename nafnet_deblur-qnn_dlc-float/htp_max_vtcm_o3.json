@@ -1,0 +1,24 @@
+{
+  "graphs": [
+    {
+      "graph_names": [
+        "graph_g3ou7yiu"
+      ],
+      "vtcm_mb": 0,
+      "O": 3
+    }
+  ],
+  "devices": [
+    {
+      "soc_model": 87,
+      "dsp_arch": "v81",
+      "cores": [
+        {
+          "perf_profile": "burst",
+          "rpc_polling_time": 9999,
+          "rpc_control_latency": 100
+        }
+      ]
+    }
+  ]
+}
