@@ -1,0 +1,43 @@
+{
+    "model_id": "nafnet_deblur",
+    "model_name": "NAFNet-DeBlur",
+    "runtime": "qnn_dlc",
+    "precision": "w8a16",
+    "tool_versions": {
+        "qairt": "2.45.0.260326154327"
+    },
+    "model_files": {
+        "nafnet_deblur.dlc": {
+            "inputs": {
+                "image": {
+                    "shape": [
+                        1,
+                        360,
+                        640,
+                        3
+                    ],
+                    "dtype": "uint16",
+                    "quantization_parameters": {
+                        "scale": 0.000015259021893143654,
+                        "zero_point": 0
+                    }
+                }
+            },
+            "outputs": {
+                "deblurred_image": {
+                    "shape": [
+                        1,
+                        360,
+                        640,
+                        3
+                    ],
+                    "dtype": "uint16",
+                    "quantization_parameters": {
+                        "scale": 0.000019742114091059193,
+                        "zero_point": 8480
+                    }
+                }
+            }
+        }
+    }
+}

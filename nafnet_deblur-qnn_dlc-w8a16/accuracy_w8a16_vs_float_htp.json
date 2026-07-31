@@ -1,0 +1,15 @@
+{
+  "reference": "QNN float HTP output (previously validated against ONNX Runtime)",
+  "quantized_output": "/media/code/tools/naf/nafnet_deblur-qnn_dlc-w8a16/results/bench_maxvtcm_o3_native_shared_50/Result_0/deblurred_image_native.raw",
+  "output_scale": 1.9742114091059193e-05,
+  "output_zero_point": 8480,
+  "mae": 0.0012784587452188134,
+  "max_abs": 0.02567005157470703,
+  "mse": 3.397459842398609e-06,
+  "psnr_db": 54.68845667878106,
+  "clipped_psnr_db": 54.724701010593094,
+  "quantized_output_min": 3530,
+  "quantized_output_max": 65535,
+  "dequantized_min": -0.09772346168756485,
+  "dequantized_max": 1.126386284828186
+}

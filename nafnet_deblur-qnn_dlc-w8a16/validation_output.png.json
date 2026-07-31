@@ -1,0 +1,15 @@
+{
+  "shape": [
+    360,
+    640,
+    3
+  ],
+  "native_dtype": "uint16",
+  "scale": 1.9742114091059193e-05,
+  "zero_point": 8480,
+  "native_min": 3530,
+  "native_max": 65535,
+  "dequantized_min": -0.09772346168756485,
+  "dequantized_max": 1.126386284828186,
+  "finite": true
+}
