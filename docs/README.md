@@ -2,11 +2,12 @@
 
 ## 推荐阅读顺序
 
-1. `NAFNET_ONE_PAGE_REPORT.md`：快速了解模型、部署、优化和结论。
-2. `BLOG_NAFNET_FROM_313MS_TO_43MS.md`：按排障故事理解为什么从 313 ms 优化到 43.8 ms。
-3. `NAFNET_DETAILED_ENGINEERING_REPORT.md`：完整原理、项目拆解、验证、消融、局限和测试题。
-4. `QNN_DLC_DEVICE_RUNBOOK.md`：运行下一个 DLC 时直接复制执行的通用手册。
-5. `NAFNET_ONNX_W8A16_AND_DIRECT_HTP_REPORT.md`：ONNX w8a16 的 ORT QNN EP 实测，以及绕过 QNN 直连 HTP 的可行性、缺口和决策。
+1. `NAFNET_W8A16_PC_ANDROID_ONNX_DLC_RUNBOOK.md`：当前设备可直接执行的 PC ONNX、Android ONNX QNN EP、QNN DLC 统一详细手册。
+2. `NAFNET_ONE_PAGE_REPORT.md`：快速了解模型、部署、优化和结论。
+3. `BLOG_NAFNET_FROM_313MS_TO_43MS.md`：按排障故事理解为什么从 313 ms 优化到 43.8 ms。
+4. `NAFNET_DETAILED_ENGINEERING_REPORT.md`：完整原理、项目拆解、验证、消融、局限和测试题。
+5. `QNN_DLC_DEVICE_RUNBOOK.md`：运行下一个 DLC 时直接复制执行的通用手册。
+6. `NAFNET_ONNX_W8A16_AND_DIRECT_HTP_REPORT.md`：ONNX w8a16 的 ORT QNN EP 实测，以及绕过 QNN 直连 HTP 的可行性、缺口和决策。
 
 ## 原始工程入口
 
