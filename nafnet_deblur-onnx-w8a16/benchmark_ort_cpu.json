@@ -1,0 +1,33 @@
+{
+  "model": "/media/code/tools/naf/nafnet_deblur-onnx-w8a16/nafnet_deblur.onnx",
+  "input": "/media/code/tools/naf/nafnet_deblur-qnn_dlc-w8a16/.qnn_work/input_640x360.png",
+  "onnxruntime_version": "1.26.0",
+  "provider": "CPUExecutionProvider",
+  "threads": 24,
+  "warmup_runs": 1,
+  "measured_runs": 5,
+  "session_init_ms": 453.8089569978183,
+  "run_times_ms": [
+    2566.423112002667,
+    1975.955358997453,
+    1981.1999199955608,
+    2083.532946999185,
+    2294.216686001164
+  ],
+  "average_ms": 2180.265604799206,
+  "median_ms": 2083.532946999185,
+  "minimum_ms": 1975.955358997453,
+  "maximum_ms": 2566.423112002667,
+  "output_native_min": 3508,
+  "output_native_max": 65535,
+  "qnn_comparison": {
+    "qnn_output": "/media/code/tools/naf/nafnet_deblur-qnn_dlc-w8a16/results/bench_maxvtcm_o3_native_shared_50/Result_0/deblurred_image_native.raw",
+    "native_mae": 11.660953414351852,
+    "native_max_abs_error": 313,
+    "native_exact_fraction": 0.03135271990740741,
+    "dequantized_mae": 0.0002302118727166605,
+    "dequantized_rmse": 0.0003231692768515718,
+    "dequantized_max_abs_error": 0.006179281710501527,
+    "psnr_for_unit_range_db": 69.81139867131859
+  }
+}

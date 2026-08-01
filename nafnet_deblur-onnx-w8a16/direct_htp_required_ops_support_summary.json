@@ -1,0 +1,32 @@
+{
+  "ADD": {
+    "total": 90,
+    "supported": 66,
+    "unsupported": 24
+  },
+  "IM2COL": {
+    "total": 91,
+    "supported": 0,
+    "unsupported": 91
+  },
+  "MUL": {
+    "total": 90,
+    "supported": 66,
+    "unsupported": 24
+  },
+  "NORM": {
+    "total": 30,
+    "supported": 30,
+    "unsupported": 0
+  },
+  "PAD": {
+    "total": 28,
+    "supported": 28,
+    "unsupported": 0
+  },
+  "SUM_ROWS": {
+    "total": 10,
+    "supported": 4,
+    "unsupported": 6
+  }
+}

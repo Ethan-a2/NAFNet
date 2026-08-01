@@ -1,0 +1,11 @@
+EP device: CPUExecutionProvider
+EP device: QNNExecutionProvider
+run 1: 3828.403 ms
+environment_and_plugin_init_ms=62.631
+session_init_ms=2096.007
+average_ms=3828.403
+median_ms=3828.403
+minimum_ms=3828.403
+maximum_ms=3828.403
+output_native_min=3504
+output_native_max=65535
