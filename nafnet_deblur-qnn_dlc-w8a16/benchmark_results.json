@@ -1,0 +1,80 @@
+{
+  "measured_on": "2026-07-31",
+  "device": {
+    "adb_serial": "c495c2c3",
+    "model": "2512BPNDAC",
+    "soc": "SM8850",
+    "htp_arch": "v81",
+    "android": "16"
+  },
+  "software": {
+    "runtime_qairt": "2.47.0.260601",
+    "dlc_generation_qairt": "2.45.0.260326154327"
+  },
+  "model": {
+    "precision": "w8a16",
+    "input_shape": [1, 360, 640, 3],
+    "input_dtype": "uint16",
+    "output_dtype": "uint16"
+  },
+  "local_ablation": [
+    {
+      "name": "default_vtcm_float_io",
+      "inferences": 20,
+      "accelerator_average_ms": 327.597,
+      "netrun_average_ms": 330.964
+    },
+    {
+      "name": "default_vtcm_burst_float_io",
+      "inferences": 30,
+      "accelerator_average_ms": 327.558,
+      "netrun_average_ms": 330.904
+    },
+    {
+      "name": "default_vtcm_burst_native_io",
+      "inferences": 30,
+      "accelerator_average_ms": 327.253,
+      "netrun_average_ms": 331.394
+    },
+    {
+      "name": "max_vtcm_burst_native_io",
+      "inferences": 30,
+      "accelerator_average_ms": 64.619,
+      "netrun_average_ms": 66.089
+    },
+    {
+      "name": "max_vtcm_burst_native_io_shared_buffer",
+      "inferences": 30,
+      "accelerator_average_ms": 62.916,
+      "netrun_average_ms": 63.864
+    },
+    {
+      "name": "max_vtcm_o3_burst_native_io_shared_buffer",
+      "inferences": 50,
+      "accelerator_average_ms": 43.819,
+      "accelerator_min_ms": 43.791,
+      "accelerator_max_ms": 44.967,
+      "netrun_average_ms": 44.742
+    },
+    {
+      "name": "max_vtcm_dlbc_slc_burst_native_io_shared_buffer",
+      "inferences": 30,
+      "accelerator_average_ms": 64.733,
+      "netrun_average_ms": 65.66,
+      "note": "DLBC weights reported unsupported; the combined DLBC/SLC experiment did not improve latency."
+    }
+  ],
+  "float_reference": {
+    "default_accelerator_ms": 317.113,
+    "max_vtcm_o3_shared_buffer_accelerator_ms": 49.192
+  },
+  "current_ai_hub_page_observations": {
+    "page_version": "v0.58.0",
+    "device": "Samsung Galaxy S26",
+    "qnn_dlc_w8a8_ms": 17.199,
+    "qnn_dlc_w8a16_ms": 39.251,
+    "qnn_dlc_float_ms": 44.648,
+    "source": "https://aihub.qualcomm.com/models/nafnet_deblur",
+    "observed_on": "2026-07-31"
+  }
+}

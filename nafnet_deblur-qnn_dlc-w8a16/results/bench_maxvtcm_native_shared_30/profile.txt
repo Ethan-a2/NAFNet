@@ -1,0 +1,77 @@
+Input Log File Location: bench_maxvtcm_native_shared_30/qnn-profiling-data_0.log
+Log File Created: Mon Jun  1 22:53:11 2026
+Time Scale: 1e-06
+Epoch Timestamp: 1780325591256993 Steady Clock Timestamp: 329004211125
+Generated using: 
+qnn-profile-viewer: v2.47.0.260601114230
+qnn-net-run: v2.47.0.260601114230
+Backend: v2.47.0.260601114230
+
+Qnn Init/Prepare/Finalize/De-Init/Execute/Lib-Load Statistics:
+------------------------------------------------------------
+Init Stats:
+-----------
+    NetRun: 74540 us
+    Backend (RPC (load binary) time): 60761 us
+    Backend (QNN accelerator (load binary) time): 60021 us
+    Backend (Accelerator (load binary) time): 59687 us
+    Backend (QNN (load binary) time): 74497 us
+
+Compose Graphs Stats:
+--------------
+    NetRun: 0 us
+
+Finalize Stats:
+---------------
+
+De-Init Stats:
+--------------
+    NetRun: 9844 us
+    Backend (RPC (deinit) time): 2889 us
+    Backend (QNN Accelerator (deinit) time): 506 us
+    Backend (Accelerator (deinit) time): 483 us
+    Backend (QNN (deinit) time): 9806 us
+
+Execute Stats (Overall):
+------------------------
+    NetRun IPS (includes IO and misc. time): 14.2774 inf/sec 
+
+Execute Stats (Average):
+------------------------
+Total Inference Time: 
+---------------------
+Graph 0 (graph_adnms07w):
+    NetRun: 63864 us
+    Backend (Number of HVX threads used): 8 count
+    Backend (RPC (execute) time): 63728 us
+    Backend (QNN accelerator (execute) time): 62916 us
+    Backend (Accelerator (execute) time): 62854 us
+    Backend (Accelerator (execute excluding wait) time): 62767 us
+    Backend (QNN (execute) time): 63834 us
+
+Execute Stats (Min):
+------------------------
+Total Inference Time: 
+---------------------
+Graph 0 (graph_adnms07w):
+    NetRun: 63501 us
+    Backend (Number of HVX threads used): 8 count
+    Backend (RPC (execute) time): 63385 us
+    Backend (QNN accelerator (execute) time): 62881 us
+    Backend (Accelerator (execute) time): 62821 us
+    Backend (Accelerator (execute excluding wait) time): 62768 us
+    Backend (QNN (execute) time): 63475 us
+
+Execute Stats (Max):
+------------------------
+Total Inference Time: 
+---------------------
+Graph 0 (graph_adnms07w):
+    NetRun: 64950 us
+    Backend (Number of HVX threads used): 8 count
+    Backend (RPC (execute) time): 64677 us
+    Backend (QNN accelerator (execute) time): 63947 us
+    Backend (Accelerator (execute) time): 63841 us
+    Backend (Accelerator (execute excluding wait) time): 62851 us
+    Backend (QNN (execute) time): 64916 us
+

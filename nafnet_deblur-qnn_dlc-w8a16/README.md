@@ -2,6 +2,8 @@
 
 该目录包含 Qualcomm AI Hub 导出的 `w8a16` DLC。输入和输出均为 NHWC `uint16`，形状为 `1x360x640x3`；量化参数以 `metadata.json` 为准。
 
+综合工程文档见 `/media/code/tools/naf/docs/README.md`；运行其它 DLC 时可直接参考其中的 `QNN_DLC_DEVICE_RUNBOOK.md`。
+
 ## 一键运行
 
 ```bash
