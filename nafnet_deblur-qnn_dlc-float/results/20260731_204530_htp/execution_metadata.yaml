@@ -1,0 +1,17 @@
+---
+timestamp: 327717926625
+command: ./qnn-net-run --backend libQnnHtp.so --retrieve_context context_htp/nafnet_htp_v81_5c09948541c1d08c.bin --input_list input_list.txt --output_dir output_htp_20260731_204530 --profiling_level basic --log_level info
+execution_mode: synchronous
+inferences_completed: 1
+graphs:
+  - graph_name: graph_g3ou7yiu
+    input_tensors:
+    - tensor_name: image
+      id: 1
+      datatype: QNN_DATATYPE_FLOAT_32
+      dimensions: [1,360,640,3]
+    output_tensors:
+    - tensor_name: deblurred_image
+      id: 2273
+      datatype: QNN_DATATYPE_FLOAT_32
+      dimensions: [1,360,640,3]

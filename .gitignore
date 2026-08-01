@@ -7,3 +7,6 @@ logs/
 *.sh
 datasets
 basicsr.egg-info
+
+# ONNX external weights exceed GitHub's per-file limit.
+nafnet_deblur-onnx-w8a16/nafnet_deblur.data

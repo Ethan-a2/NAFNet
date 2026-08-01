@@ -1,0 +1,17 @@
+---
+timestamp: 326766805830
+command: ./qnn-net-run --backend libQnnGpu.so --model libQnnModelDlc.so --dlc_path nafnet_deblur.dlc --input_list input_list.txt --output_dir output_gpu --profiling_level basic --log_level info
+execution_mode: synchronous
+inferences_completed: 1
+graphs:
+  - graph_name: graph_g3ou7yiu
+    input_tensors:
+    - tensor_name: image
+      id: 1
+      datatype: QNN_DATATYPE_FLOAT_32
+      dimensions: [1,360,640,3]
+    output_tensors:
+    - tensor_name: deblurred_image
+      id: 2273
+      datatype: QNN_DATATYPE_FLOAT_32
+      dimensions: [1,360,640,3]

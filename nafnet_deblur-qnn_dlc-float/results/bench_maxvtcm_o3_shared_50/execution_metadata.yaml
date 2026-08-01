@@ -1,0 +1,17 @@
+---
+timestamp: 329476472505
+command: ./qnn-net-run --backend libQnnHtp.so --retrieve_context context_htp/nafnet_float_htp_v81_maxvtcm_o3.bin --config_file htp_netrun_o3_config.json --input_list input_list.txt --output_dir bench_maxvtcm_o3_shared_50 --profiling_level basic --perf_profile burst --num_inferences 50 --keep_num_outputs 1 --shared_buffer --log_level warn
+execution_mode: synchronous
+inferences_completed: 50
+graphs:
+  - graph_name: graph_g3ou7yiu
+    input_tensors:
+    - tensor_name: image
+      id: 1
+      datatype: QNN_DATATYPE_FLOAT_32
+      dimensions: [1,360,640,3]
+    output_tensors:
+    - tensor_name: deblurred_image
+      id: 2273
+      datatype: QNN_DATATYPE_FLOAT_32
+      dimensions: [1,360,640,3]

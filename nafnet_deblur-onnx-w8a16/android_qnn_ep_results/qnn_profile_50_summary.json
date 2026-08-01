@@ -1,0 +1,46 @@
+{
+  "RPC (execute) time": {
+    "count_total": 55,
+    "count_measured": 50,
+    "average_ms": 45.539179999999995,
+    "minimum_ms": 45.164,
+    "maximum_ms": 47.864
+  },
+  "QNN accelerator (execute) time": {
+    "count_total": 55,
+    "count_measured": 50,
+    "average_ms": 44.96328,
+    "minimum_ms": 44.621,
+    "maximum_ms": 47.284
+  },
+  "Accelerator (execute) time": {
+    "count_total": 55,
+    "count_measured": 50,
+    "average_ms": 44.827619999999996,
+    "minimum_ms": 44.486,
+    "maximum_ms": 47.146
+  },
+  "Accelerator (execute excluding wait) time": {
+    "count_total": 55,
+    "count_measured": 50,
+    "average_ms": 44.477979999999995,
+    "minimum_ms": 44.143,
+    "maximum_ms": 46.793
+  },
+  "QNN (execute) time": {
+    "count_total": 55,
+    "count_measured": 50,
+    "average_ms": 47.907,
+    "minimum_ms": 46.902,
+    "maximum_ms": 50.5
+  },
+  "QNN (finalize) time": {
+    "ms": 45485.848
+  },
+  "QNN accelerator (finalize) time": {
+    "ms": 115.708
+  },
+  "RPC (finalize) time": {
+    "ms": 118.452
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "ort_qnn_vs_ort_cpu": {
+    "native_mae": 11.678841145833333,
+    "native_max_abs_error": 319,
+    "native_exact_fraction": 0.03199797453703704,
+    "dequantized_mae": 0.00023056501435239813,
+    "dequantized_rmse": 0.0003240321358866529,
+    "dequantized_max_abs_error": 0.006297734395047883,
+    "psnr_unit_range_db": 69.78823833005562
+  },
+  "ort_qnn_vs_dlc_qnn": {
+    "native_mae": 5.999719328703704,
+    "native_max_abs_error": 81,
+    "native_exact_fraction": 0.10556712962962964,
+    "dequantized_mae": 0.00011844714350160159,
+    "dequantized_rmse": 0.00016208191840036984,
+    "dequantized_max_abs_error": 0.0015991112413757946,
+    "psnr_unit_range_db": 75.80530863294291
+  },
+  "ort_qnn_min": 3530,
+  "ort_qnn_max": 65535
+}

@@ -1,0 +1,65 @@
+{
+  "date": "2026-07-31",
+  "device": {
+    "manufacturer": "Xiaomi",
+    "model": "2512BPNDAC",
+    "soc": "SM8850",
+    "android": 16,
+    "htp_arch": "v81"
+  },
+  "model": {
+    "source": "Qualcomm AI Hub nafnet_deblur",
+    "checkpoint": "NAFNet-REDS-width64",
+    "format": "QNN DLC float",
+    "input": "float32 NHWC [1,360,640,3]",
+    "output": "float32 NHWC [1,360,640,3]",
+    "compiler_qairt": "2.45.0.260326154327",
+    "runtime_qairt": "2.47.0.260601"
+  },
+  "single_inference_profile_ms": {
+    "cpu": {
+      "finalize": 388.730,
+      "execute": 4323.936,
+      "host_end_to_end": 6190
+    },
+    "gpu": {
+      "finalize": 3001.390,
+      "execute": 2027.339,
+      "host_end_to_end": 6480
+    },
+    "htp_online_prepare": {
+      "finalize": 58971.980,
+      "execute": 313.107,
+      "host_end_to_end": 61300
+    },
+    "htp_cached_context": {
+      "context_load": 155.993,
+      "execute": 320.193,
+      "host_end_to_end": 1200
+    },
+    "htp_max_vtcm_o3_shared_buffer_50_runs": {
+      "context_load": 152.948,
+      "qnn_accelerator_execute_average": 49.192,
+      "qnn_accelerator_execute_min": 48.637,
+      "qnn_accelerator_execute_max": 50.933,
+      "netrun_execute_average": 49.968
+    }
+  },
+  "accuracy_vs_onnx": {
+    "cpu": {
+      "mae": 9.428959657498126e-08,
+      "max_abs": 2.205371856689453e-06,
+      "psnr_db": 136.47116322772018
+    },
+    "gpu": {
+      "mae": 7.003067281630138e-08,
+      "max_abs": 1.5497207641601562e-06,
+      "psnr_db": 139.15643259045981
+    },
+    "htp": {
+      "mae": 0.0001484951499151066,
+      "max_abs": 0.002613842487335205,
+      "psnr_db": 73.85496296966986
+    }
+  }
+}

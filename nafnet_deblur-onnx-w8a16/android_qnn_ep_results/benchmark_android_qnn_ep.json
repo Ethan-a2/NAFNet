@@ -1,0 +1,197 @@
+{
+  "date": "2026-07-31",
+  "device": {
+    "serial": "c495c2c3",
+    "model": "2512BPNDAC",
+    "soc": "SM8850",
+    "android": "16",
+    "htp_arch": "v81",
+    "hvx_threads": 8,
+    "hmx_units_reported": 1,
+    "max_vtcm_mb": 8
+  },
+  "model": {
+    "path": "/media/code/tools/naf/nafnet_deblur-onnx-w8a16/nafnet_deblur.onnx",
+    "precision": "w8a16",
+    "input": "uint16 NCHW [1,3,360,640]",
+    "output": "uint16 NCHW [1,3,360,640]",
+    "model_qairt_version": "2.45.0.260326154327"
+  },
+  "runtime": {
+    "onnxruntime_qnn_ep": "2.4.0",
+    "onnxruntime_android": "1.24.3",
+    "device_qairt": "2.47.0.260601",
+    "qnn_backend": "libQnnHtp.so",
+    "qnn_backend_path_mode": "absolute path",
+    "skip_qnn_version_check": true,
+    "cpu_fallback_disabled": true
+  },
+  "host_cpu": {
+    "model": "/media/code/tools/naf/nafnet_deblur-onnx-w8a16/nafnet_deblur.onnx",
+    "input": "/media/code/tools/naf/nafnet_deblur-qnn_dlc-w8a16/.qnn_work/input_640x360.png",
+    "onnxruntime_version": "1.26.0",
+    "provider": "CPUExecutionProvider",
+    "threads": 24,
+    "warmup_runs": 1,
+    "measured_runs": 5,
+    "session_init_ms": 453.8089569978183,
+    "run_times_ms": [
+      2566.423112002667,
+      1975.955358997453,
+      1981.1999199955608,
+      2083.532946999185,
+      2294.216686001164
+    ],
+    "average_ms": 2180.265604799206,
+    "median_ms": 2083.532946999185,
+    "minimum_ms": 1975.955358997453,
+    "maximum_ms": 2566.423112002667,
+    "output_native_min": 3508,
+    "output_native_max": 65535,
+    "qnn_comparison": {
+      "qnn_output": "/media/code/tools/naf/nafnet_deblur-qnn_dlc-w8a16/results/bench_maxvtcm_o3_native_shared_50/Result_0/deblurred_image_native.raw",
+      "native_mae": 11.660953414351852,
+      "native_max_abs_error": 313,
+      "native_exact_fraction": 0.03135271990740741,
+      "dequantized_mae": 0.0002302118727166605,
+      "dequantized_rmse": 0.0003231692768515718,
+      "dequantized_max_abs_error": 0.006179281710501527,
+      "psnr_for_unit_range_db": 69.81139867131859
+    }
+  },
+  "android_qnn_profiled": {
+    "runs": 50,
+    "average_ms": 52.24546,
+    "median_ms": 52.2575,
+    "minimum_ms": 49.309,
+    "maximum_ms": 55.427,
+    "fps_from_average": 19.140419090960247,
+    "stddev_ms": 1.2508695249305584,
+    "session_init_ms": 62331.118,
+    "environment_and_plugin_init_ms": 59.987,
+    "provider_options": {
+      "htp_performance_mode": "burst",
+      "htp_graph_finalization_optimization_mode": "3",
+      "vtcm_mb": "8",
+      "enable_htp_shared_memory_allocator": "1",
+      "offload_graph_io_quantization": "0",
+      "profiling_level": "basic"
+    },
+    "profiler_summary": {
+      "RPC (execute) time": {
+        "count_total": 55,
+        "count_measured": 50,
+        "average_ms": 45.539179999999995,
+        "minimum_ms": 45.164,
+        "maximum_ms": 47.864
+      },
+      "QNN accelerator (execute) time": {
+        "count_total": 55,
+        "count_measured": 50,
+        "average_ms": 44.96328,
+        "minimum_ms": 44.621,
+        "maximum_ms": 47.284
+      },
+      "Accelerator (execute) time": {
+        "count_total": 55,
+        "count_measured": 50,
+        "average_ms": 44.827619999999996,
+        "minimum_ms": 44.486,
+        "maximum_ms": 47.146
+      },
+      "Accelerator (execute excluding wait) time": {
+        "count_total": 55,
+        "count_measured": 50,
+        "average_ms": 44.477979999999995,
+        "minimum_ms": 44.143,
+        "maximum_ms": 46.793
+      },
+      "QNN (execute) time": {
+        "count_total": 55,
+        "count_measured": 50,
+        "average_ms": 47.907,
+        "minimum_ms": 46.902,
+        "maximum_ms": 50.5
+      },
+      "QNN (finalize) time": {
+        "ms": 45485.848
+      },
+      "QNN accelerator (finalize) time": {
+        "ms": 115.708
+      },
+      "RPC (finalize) time": {
+        "ms": 118.452
+      }
+    }
+  },
+  "android_qnn_no_profile": {
+    "runs": 50,
+    "average_ms": 46.758100000000006,
+    "median_ms": 46.1215,
+    "minimum_ms": 45.69,
+    "maximum_ms": 49.277,
+    "fps_from_average": 21.386668833849107,
+    "stddev_ms": 1.040964326958422,
+    "session_init_ms": 53748.281,
+    "environment_and_plugin_init_ms": 61.268,
+    "run_options": {}
+  },
+  "android_qnn_optimized_dynamic_run_options": {
+    "runs": 30,
+    "average_ms": 45.87603333333333,
+    "median_ms": 45.8625,
+    "minimum_ms": 45.716,
+    "maximum_ms": 46.5,
+    "fps_from_average": 21.797874125996074,
+    "stddev_ms": 0.1500407685338296,
+    "session_init_ms": 53955.804,
+    "environment_and_plugin_init_ms": 60.077,
+    "run_options": {
+      "qnn.perf_mode": "burst",
+      "qnn.rpc_control_latency": "100"
+    }
+  },
+  "ablation": {
+    "dynamic_run_options_average_improvement_ms": 0.8820666666666739,
+    "dynamic_run_options_average_improvement_percent": 1.9227178170737158,
+    "profiled_wall_overhead_vs_optimized_ms": 6.369426666666669
+  },
+  "output_consistency": {
+    "ort_qnn_vs_ort_cpu": {
+      "native_mae": 11.678841145833333,
+      "native_max_abs_error": 319,
+      "native_exact_fraction": 0.03199797453703704,
+      "dequantized_mae": 0.00023056501435239813,
+      "dequantized_rmse": 0.0003240321358866529,
+      "dequantized_max_abs_error": 0.006297734395047883,
+      "psnr_unit_range_db": 69.78823833005562
+    },
+    "ort_qnn_vs_dlc_qnn": {
+      "native_mae": 5.999719328703704,
+      "native_max_abs_error": 81,
+      "native_exact_fraction": 0.10556712962962964,
+      "dequantized_mae": 0.00011844714350160159,
+      "dequantized_rmse": 0.00016208191840036984,
+      "dequantized_max_abs_error": 0.0015991112413757946,
+      "psnr_unit_range_db": 75.80530863294291
+    },
+    "ort_qnn_min": 3530,
+    "ort_qnn_max": 65535,
+    "profiled_vs_dynamic_exact_fraction": 1.0,
+    "profiled_vs_dynamic_max_abs_error": 0
+  },
+  "qnn_dlc_reference": {
+    "accelerator_average_ms": 43.819,
+    "qnn_average_ms": 44.716,
+    "netrun_average_ms": 44.742
+  },
+  "pure_htp_verification": {
+    "session_disable_cpu_ep_fallback": "1",
+    "session_creation_succeeded": true,
+    "single_run_ms": 45.818,
+    "session_init_ms": 54507.095,
+    "output_native_min": 3530,
+    "output_native_max": 65535,
+    "conclusion": "All required graph nodes were accepted without CPU fallback."
+  }
+}
