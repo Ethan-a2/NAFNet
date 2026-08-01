@@ -54,9 +54,8 @@ ONNX -> ONNX Runtime Android -> QNN EP 插件 -> QNN HTP -> FastRPC -> HTP/NPU
 当前没有阻塞 adb benchmark 的必需环境缺口。仍然存在的产品化缺口是：
 
 1. ONNX QNN EP context cache 尚未接入，导致每次创建 Session 在线编译约 54 秒。
-2. ORT Android AAR 和 QNN EP AAR 当前位于 `/tmp`，应移动到稳定目录。
-3. QNN EP 2.4.0 的验证组合偏向 QNN 2.45，而本机使用 QNN 2.47，当前依赖 `skip_qnn_version_check=1`。
-4. 当前方式是 `/data/local/tmp` 下的原生 benchmark，不是 APK/JNI 产品集成。
+2. QNN EP 2.4.0 的验证组合偏向 QNN 2.45，而本机使用 QNN 2.47，当前依赖 `skip_qnn_version_check=1`。
+3. 当前方式是 `/data/local/tmp` 下的原生 benchmark，不是 APK/JNI 产品集成。
 
 ### 1.3 三条链路的实测性能
 
@@ -140,16 +139,19 @@ QAIRT/QNN SDK：
 /opt/qcom/aistack/qairt/2.47.0.260601
 
 ORT Android AAR：
-/tmp/onnxruntime-android-1.24.3.aar
+/opt/onnxruntime-android-qnn/artifacts/onnxruntime-android-1.24.3.aar
 
 QNN EP AAR：
-/tmp/onnxruntime-android-qnn-2.4.0.aar
+/opt/onnxruntime-android-qnn/artifacts/onnxruntime-android-qnn-2.4.0.aar
 
 ORT Android 解压目录：
-/tmp/ort-aar
+/opt/onnxruntime-android-qnn/extracted/onnxruntime-android-1.24.3
 
 QNN EP 解压目录：
-/tmp/qnn-ep-aar
+/opt/onnxruntime-android-qnn/extracted/onnxruntime-android-qnn-2.4.0
+
+来源、Maven 坐标和校验值：
+/opt/onnxruntime-android-qnn/SOURCES.md
 ```
 
 ### 2.4 手机远端目录
@@ -521,8 +523,7 @@ export REMOTE=/data/local/tmp/nafnet_ort_qnn_w8a16
 
 export NDK=/media/ext/opt/Android/Sdk/ndk/27.0.12077973
 export QNN=/opt/qcom/aistack/qairt/2.47.0.260601
-export ORT=/tmp/ort-aar
-export QNN_EP=/tmp/qnn-ep-aar
+source /opt/onnxruntime-android-qnn/env.sh
 
 export CXX="$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android26-clang++"
 export LIBCPP="$NDK/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so"
@@ -534,19 +535,24 @@ export LIBCPP="$NDK/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch6
 adb devices -l
 ```
 
-### 7.2 解压 Android AAR
+### 7.2 固定 Android AAR 依赖
 
-如果 `/tmp/ort-aar` 或 `/tmp/qnn-ep-aar` 被清理：
+当前 AAR、POM、校验值和解压内容已经保存到：
+
+```text
+/opt/onnxruntime-android-qnn
+```
+
+加载路径：
 
 ```bash
-rm -rf /tmp/ort-aar /tmp/qnn-ep-aar
-mkdir -p /tmp/ort-aar /tmp/qnn-ep-aar
+source /opt/onnxruntime-android-qnn/env.sh
+```
 
-unzip -q /tmp/onnxruntime-android-1.24.3.aar \
-  -d /tmp/ort-aar
+如果需要重新从 Maven Central 下载、校验并解压：
 
-unzip -q /tmp/onnxruntime-android-qnn-2.4.0.aar \
-  -d /tmp/qnn-ep-aar
+```bash
+/opt/onnxruntime-android-qnn/download.sh
 ```
 
 检查：
@@ -1291,7 +1297,7 @@ ffa61c0ee24afd411fdd8fdf6dca82efcb8a3d8f6632d2345fba973160a97099  nafnet_deblur.
 
 ### 16.4 产品化
 
-- [ ] ORT/QNN AAR 移到稳定依赖目录。
+- [x] ORT/QNN AAR 移到稳定 `/opt` 依赖目录并记录来源与哈希。
 - [ ] QNN Runtime 与插件版本正式对齐。
 - [ ] ONNX QNN EP context cache 完成实测。
 - [ ] APK/JNI 集成完成。
@@ -1347,7 +1353,6 @@ docs/BLOG_NAFNET_FROM_313MS_TO_43MS.md
 2. 复跑 DLC 50 次，确认约 44.7 ms。
 3. 在同一轮测试中同步记录温度和频率。
 4. 实现并验证 ONNX QNN EP context cache。
-5. 将 ORT 和 QNN EP AAR 从 `/tmp` 固化到第三方依赖目录。
-6. 对齐 QNN EP 与 QNN Runtime 的正式支持版本。
-7. 将原生 runner 逻辑封装为 JNI，完成 APK 集成。
-8. 对 REDS val300 做正式质量验收，而不是只比较单张图片。
+5. 对齐 QNN EP 与 QNN Runtime 的正式支持版本。
+6. 将原生 runner 逻辑封装为 JNI，完成 APK 集成。
+7. 对 REDS val300 做正式质量验收，而不是只比较单张图片。
